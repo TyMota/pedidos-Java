@@ -23,6 +23,10 @@ public class OrderItem {
         return price;
     }
 
+    public Double subTotal(){
+        return quantity * price;
+    }
+
 
 
 
