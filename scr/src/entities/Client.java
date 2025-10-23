@@ -1,6 +1,7 @@
 package entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Client {
@@ -33,8 +34,9 @@ public class Client {
     public String getEmail(){
         return email;
     }
-    public LocalDate getBirthDate(){
-        return birthDate;
+    public String getBirthDate(){
+        DateTimeFormatter ftm = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        return birthDate.format(ftm);
     }
 
 

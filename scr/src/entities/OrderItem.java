@@ -1,8 +1,12 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderItem {
     private Integer quantity;
     private Double price;
+    private List<Product> products = new ArrayList<>();
 
     public OrderItem(){}
 
@@ -10,6 +14,7 @@ public class OrderItem {
         this.quantity = quantity;
         this.price = price;
     }
+
     public void setQuantity(Integer quantity){
         this.quantity = quantity;
     }
