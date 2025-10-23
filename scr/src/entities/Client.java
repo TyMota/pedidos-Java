@@ -15,7 +15,6 @@ public class Client {
         this.birthDate = birthDate;
     }
 
-
     public void setName(String name){
         this.name = name;
     }
@@ -27,13 +26,14 @@ public class Client {
     }
 
 
-
-
     public String getName(){
         return name;
     }
     public String getEmail(){
         return email;
+    }
+    public Date getBirthDate(){
+        return birthDate;
     }
 
 
