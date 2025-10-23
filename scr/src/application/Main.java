@@ -9,7 +9,6 @@ import entities.enums.OrderStatus;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Main {
@@ -56,12 +55,16 @@ public class Main {
 
             OrderItem orderItem = new OrderItem(quantityProd, priceProd);
             Product product = new Product(nameProd, priceProd);
+            order.addItem(orderItem);
+            orderItem.addProducts(product);
         }
 
         System.out.println("ORDER SUMMARY:");
         System.out.println("Order moment: " + order.getMoment());
         System.out.println("Order status: " + order.getStatus());
         System.out.println("Client: " + client.getName() + " (" + client.getBirthDate() + ")" + " - " + client.getEmail());
+
+        System.out.println(order.toString());
 
 
 

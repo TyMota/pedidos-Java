@@ -27,13 +27,30 @@ public class OrderItem {
     public Double getPrice(){
         return price;
     }
-
     public Double subTotal(){
         return quantity * price;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
 
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 
+    public void addProducts(Product product){
+        this.products.add(product);
+    }
 
+    public String toProd(){
+        String names = "";
+        Double prices = 0.0;
+        for (Product i : products){
+          names += i.getName();
+          prices += getPrice();
+        }
+        return names + ", $" + prices + ", Quatity: " + quantity + ", Subtotal: $" + subTotal() + "\n";
+    }
 
 }
